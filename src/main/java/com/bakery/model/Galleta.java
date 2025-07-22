@@ -1,4 +1,4 @@
-package com.bakery.model;
+package com.bakery.model; 
 
 public class Galleta extends Producto {
     private boolean tieneChispas;

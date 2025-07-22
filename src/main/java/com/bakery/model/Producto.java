@@ -1,14 +1,16 @@
-public class BakeryItem {
-    private int id;
-    private String name;
-    private double price;
-    private int quantity;
+package com.bakery.model;
 
-    public BakeryItem(int id, String name, double price, int quantity) {
+public class Producto {
+    private int id;
+    private String nombre;
+    private double valor;
+    private int cantidad;
+
+    public Producto(int id, String nombre, int cantidad, int valorProduccion, int valorVenta) {
         this.id = id;
-        this.name = name;
-        this.price = price;
-        this.quantity = quantity;
+        this.nombre = nombre;
+        this.valor = valor;
+        this.cantidad = cantidad;
     }
 
     public int getId() {
@@ -20,26 +22,26 @@ public class BakeryItem {
     }
 
     public String getName() {
-        return name;
+        return nombre;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.nombre = name;
     }
 
-    public double getPrice() {
-        return price;
+    public double getvalor() {
+        return valor;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setvalor(double valor) {
+        this.valor = valor;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public int getcantidad() {
+        return cantidad;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setcantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
 }
