@@ -7,26 +7,20 @@ The Bakery Management System is a Java-based application designed to manage bake
 The project follows a standard Maven directory structure:
 
 ```
-bakery-management-system
 ├── src
 │   ├── main
 │   │   ├── java
 │   │   │   └── com
-│   │   │       └── bakery
+│   │   │       └── panaderia
 │   │   │           ├── App.java
 │   │   │           ├── model
-│   │   │           │   └── BakeryItem.java
+│   │   │           │   └── Producto.java
+|   |   |           |   └── Pan.java
+|   |   |           |   └── Galleta.java
 │   │   │           ├── service
-│   │   │           │   └── BakeryService.java
-│   │   │           └── controller
-│   │   │               └── BakeryController.java
+│   │   │               └── ManejarProdcuto.java
 │   │   └── resources
 │   │       └── application.properties
-│   └── test
-│       └── java
-│           └── com
-│               └── bakery
-│                   └── AppTest.java
 ├── pom.xml
 └── README.md
 ```
