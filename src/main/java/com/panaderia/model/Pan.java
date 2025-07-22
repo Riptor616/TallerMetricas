@@ -1,4 +1,4 @@
-package com.bakery.model; 
+package com.panaderia.model; 
 
 public class Pan extends Producto {
     private boolean tieneQueso;
@@ -14,5 +14,13 @@ public class Pan extends Producto {
 
     public void setTieneQueso(boolean tieneQueso) {
         this.tieneQueso = tieneQueso;
+    }
+    
+    @Override
+    public String toCSV() {
+        return String.format("%s,%s,%d,%d,%d,%s",
+            this.getClass().getSimpleName(),
+            getNombre(), getValorVenta(), getValorProduccion(), getCantidad(),
+            isTieneQueso() ? "Queso" : "-");
     }
 }

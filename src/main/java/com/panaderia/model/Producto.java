@@ -1,4 +1,4 @@
-package com.bakery.model;
+package com.panaderia.model;
 
 public class Producto {
     private int id;
@@ -52,5 +52,11 @@ public class Producto {
 
     public void setValorProduccion(int valorProduccion) {
         this.valorProduccion = valorProduccion;
+    }
+
+    public String toCSV() {
+        return String.format("%s,%s,%d,%d,%d,-",
+            this.getClass().getSimpleName(),
+            nombre, valorVenta, valorProduccion, cantidad);
     }
 }
