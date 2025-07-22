@@ -1,5 +1,7 @@
 package com.bakery.service;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,5 +38,31 @@ public class ManejarProducto {
 
     public List<Producto> getAllItems() {
         return new ArrayList<>(items);
+    }
+
+    public void generarReporte() {
+        String archivo = "reporte_productos.csv";
+        try (FileWriter writer = new FileWriter(archivo)) {
+            // Escribir encabezado con columna Tipo
+            writer.append("ID,Nombre,Cantidad,ValorProduccion,ValorVenta,Tipo\n");
+            // Escribir datos de cada producto
+            for (Producto item : items) {
+                String tipo = "Producto";
+                if (item instanceof com.bakery.model.Galleta) {
+                    tipo = "Galleta";
+                } else if (item instanceof com.bakery.model.Pan) {
+                    tipo = "Pan";
+                }
+                writer.append(item.getId() + ",");
+                writer.append(item.getNombre() + ",");
+                writer.append(item.getCantidad() + ",");
+                writer.append(item.getValorProduccion() + ",");
+                writer.append(item.getValorVenta() + ",");
+                writer.append(tipo + "\n");
+            }
+            System.out.println("Reporte generado: " + archivo);
+        } catch (IOException e) {
+            System.out.println("Error al generar el reporte: " + e.getMessage());
+        }
     }
 }

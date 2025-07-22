@@ -3,13 +3,15 @@ package com.bakery.model;
 public class Producto {
     private int id;
     private String nombre;
-    private double valor;
+    private int valorVenta;
+    private int valorProduccion;
     private int cantidad;
 
     public Producto(int id, String nombre, int cantidad, int valorProduccion, int valorVenta) {
         this.id = id;
         this.nombre = nombre;
-        this.valor = valor;
+        this.valorVenta = valorVenta;
+        this.valorProduccion = valorProduccion;
         this.cantidad = cantidad;
     }
 
@@ -20,28 +22,35 @@ public class Producto {
     public void setId(int id) {
         this.id = id;
     }
-
-    public String getName() {
-        return nombre;
-    }
-
-    public void setName(String name) {
-        this.nombre = name;
-    }
-
-    public double getvalor() {
-        return valor;
-    }
-
-    public void setvalor(double valor) {
-        this.valor = valor;
-    }
-
-    public int getcantidad() {
+    public int getCantidad() {
         return cantidad;
     }
 
-    public void setcantidad(int cantidad) {
+    public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getValorVenta() {
+        return valorVenta;
+    }
+
+    public void setValorVenta(int valorVenta) {
+        this.valorVenta = valorVenta;
+    }
+
+    public int getValorProduccion() {
+        return valorProduccion;
+    }
+
+    public void setValorProduccion(int valorProduccion) {
+        this.valorProduccion = valorProduccion;
     }
 }
